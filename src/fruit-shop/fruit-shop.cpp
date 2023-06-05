@@ -3,9 +3,9 @@
 
 #include <iostream>
 
-FruitShop::FruitShop()
+FruitShop::FruitShop(std::string link)
 {
-    state = FruitShopState::Welcome;
+    ParseLink(link);
 }
 
 FruitShop::~FruitShop()
@@ -87,5 +87,30 @@ void FruitShop::FruitMenu()
         break;
     default:
         break;
+    }
+}
+
+
+void FruitShop::ParseLink(std::string link)
+{
+    if (link == "fruit-shop://welcome")
+    {
+        state = FruitShopState::Welcome;
+    }
+    else if (link == "fruit-shop://main-menu")
+    {
+        state = FruitShopState::MainMenu;
+    }
+    else if (link == "fruit-shop://fruit-menu")
+    {
+        state = FruitShopState::FruitMenu;
+    }
+    else if (link == "fruit-shop://exit")
+    {
+        state = FruitShopState::Exit;
+    }
+    else
+    {
+        state = FruitShopState::Welcome;
     }
 }

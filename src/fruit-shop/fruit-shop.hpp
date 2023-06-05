@@ -1,4 +1,4 @@
-
+#include <string>
 
 enum class FruitShopState
 {
@@ -20,8 +20,10 @@ private:
     void Exit();
 
 public:
-    FruitShop();
+    FruitShop(std::string link = "");
     ~FruitShop();
 
     void Run();
+
+    void ParseLink(std::string link);
 };
