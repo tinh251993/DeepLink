@@ -64,7 +64,7 @@ int main(int argc, char** argv){
     #endif
     
 
-    FruitShop fruitShop;
+    FruitShop fruitShop(argv[1]);
     fruitShop.Run();
 
     std::cout<<"try done";
