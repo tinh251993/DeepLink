@@ -10,6 +10,8 @@
 #include <CoreFoundation/CoreFoundation.h>
 #endif
 
+#include "fruit-shop/fruit-shop.hpp"
+
 int main(int argc, char** argv){
     #ifdef _WIN32
 
@@ -24,5 +26,9 @@ int main(int argc, char** argv){
         (appPath + " \"%1\"").c_str(), (appPath + " \"%1\"").length());
     #endif
     
+
+    FruitShop fruitShop;
+    fruitShop.Run();
+
     return 0;
 }
